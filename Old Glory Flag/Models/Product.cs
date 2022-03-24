@@ -1,17 +1,16 @@
-﻿using System;
+﻿namespace Old_Glory_Flag.Models
 
-namespace OldGloryFlag.Model
+
 {
-
-
-    public class Products
+    public class Product
     {
-        public int OrderID { get; set; }
-
+        public int ID { get; set; }
         public string Title { get; set; }
+        public int Price { get; set; }
 
-        public int Credits { get; set; }
-
-        public ICollections<Order> Orders { get; set; }
+        public ICollection<Customer> Customers { get; set; }
     }
 }
+    
+
+
