@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FlagGlory.Controllers;
 using Microsoft.EntityFrameworkCore;
 using MoreOldGlory.Models;
 
@@ -27,8 +28,9 @@ namespace FlagGlory.Data
             modelBuilder.Entity<Order>().ToTable("Order");
         }
 
-
-
-
+        public static implicit operator FlagGloryContext(CustomerController v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

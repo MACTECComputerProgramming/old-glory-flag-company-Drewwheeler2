@@ -10,6 +10,17 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Find by name: <input type="text" name="SearchString" value="@ViewData["NameSort"]" />
+            <input type="submit" value="Search" class="btn btn-default" /> |
+            <a asp-action="Index">Back to Full List</a>
+        </p>
+    </div>
+</form>
+
+
 <table class="table">
     <thead>
         <tr>
@@ -28,7 +39,12 @@
             <th>
                 @Html.DisplayNameFor(model => model.Customer[0].City)
             </th>
-            <th></th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]">@Html.DisplayNameFor(model => model.Customer)</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]">@Html.DisplayNameFor(model => model.Customer)</a>
+            </th>
         </tr>
     </thead>
     <tbody>
